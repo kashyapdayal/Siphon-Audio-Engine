@@ -4,7 +4,7 @@
 
 Built with Kotlin and C++, Siphon completely bypasses the Android OS audio stack (AudioFlinger / AudioTrack) to deliver unmodified, raw audio streams directly to external USB Digital-to-Analog Converters (DACs).
 
-## - Features
+## Features
 
 * **Bit-Perfect Playback**: Prevents Android from resampling, downmixing, or altering your audio data. What goes into the engine is exactly what arrives at the DAC.
 * **Direct USB Isochronous Transfers**: Powered by a statically-linked `libusb` core, Siphon communicates directly with USB audio hardware in user-space.
@@ -15,13 +15,13 @@ Built with Kotlin and C++, Siphon completely bypasses the Android OS audio stack
   * Dynamic format resampling (`siphon_resampler`)
 * **Hardware Interrogation**: Automatically parses USB Audio Class (UAC) descriptors to identify supported sample rates, bit depths, and channel masks (`SiphonDescriptorParser`).
 
-## - Architecture
+## Architecture
 
 Siphon is divided into two layers:
 1. **The Native Core (C++)**: Handles the heavy lifting—memory management, fast-math DSP execution, and `libusb` asynchronous USB transfers.
 2. **The Kotlin Framework**: Manages Android lifecycles, USB permission requests, ExoPlayer integration, and component routing (`SiphonManager`).
 
-## - Installation & Setup
+## Installation & Setup
 
 1. Clone or download the `siphon-engine` module into your project.
 2. Add it to your `settings.gradle.kts`:
@@ -34,7 +34,7 @@ Siphon is divided into two layers:
    ```
 4. *Note: Ensure your project supports NDK/CMake as this library compiles a custom C++ JNI bridge.*
 
-## - Usage
+## Usage
 
 To hook Siphon into your ExoPlayer instance:
 
@@ -52,8 +52,8 @@ val player = ExoPlayer.Builder(context)
     .build()
 ```
 
-## 🤝 Contributing
+## Contributing
 Contributions are welcome! If you want to add support for UAC3, new DSD formats, or optimize the DSP pipeline, feel free to open a Pull Request.
 
-## 📄 License
+##  License
 MIT License
